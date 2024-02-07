@@ -1,0 +1,23 @@
+{
+  "name": "udemycourse",
+  "version": "1.0.0",
+  "description": "Automated  testing via Playwright",
+  "main": "index.js",
+  "scripts": {
+    "tests:test1": "playwright test --config=playwright.config.ts --project=test1",
+    "tests:test2": "playwright test --config=playwright.config.ts --project=test2"
+    
+  },
+  "author": "Victor P",
+  "license": "ISC",
+  "dependencies": {
+    "@playwright/test": "^1.33.0",
+    "dotenv": "^16.3.1",
+    "node-fetch": "^2.6.9",
+    "playwright": "^1.33.0",
+    "prettier": "^2.8.4"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.6.3"
+  }
+}

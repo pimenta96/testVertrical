@@ -1,0 +1,87 @@
+Feature: Authentication
+
+Scenario: Confirm successful sign-in with valid credentials
+    Given a user accesses the sign-in page
+    When they provide valid authentication credentials
+    And click the sign-in button
+    Then they should be directed to the dashboard
+
+Scenario: Validate display of error message for invalid username/password combination
+    Given a user accesses the sign-in page
+    When they input incorrect login details
+    And attempt to sign in
+    Then they should receive an error message indicating invalid credentials
+
+Scenario: Ensure appropriate feedback when attempting to sign in with empty fields
+    Given a user accesses the sign-in page
+    When they leave the username or password field blank
+    And try to sign in
+    Then they should receive feedback prompting them to fill in all required fields
+
+Feature: Site Navigation
+
+Scenario: Test movement between different sections
+    Given a logged-in user
+    When they navigate through various sections like Dashboard, Settings, and Profile
+    Then they should be able to access each section successfully
+
+Scenario: Verify adaptability of navigation elements across different screen sizes
+    Given a logged-in user
+    When they resize the browser window to different dimensions
+    Then the navigation elements should adjust accordingly without overlapping or becoming inaccessible
+
+Scenario: Ensure correct redirection upon clicking links within the application
+    Given a logged-in user
+    When they click on links within the application
+    Then they should be redirected to the corresponding pages or sections as intended
+
+Feature: Dashboard Functionality
+
+Scenario: Validate consistency of displayed data with expected values
+    Given a logged-in user
+    When they view the dashboard
+    Then they should observe data consistent with expected values or metrics
+
+Scenario: Test functionality of interactive components on the dashboard
+    Given a logged-in user
+    When they interact with buttons, dropdowns, or other elements on the dashboard
+    Then they should be able to perform expected actions or trigger relevant responses
+
+Scenario: Verify effectiveness of sorting/filtering options for displayed data
+    Given a logged-in user
+    When they apply sorting or filtering options on the dashboard
+    Then the displayed data should be rearranged or filtered accordingly
+
+Feature: User Settings
+
+Scenario: Assess capability to modify user settings
+    Given a logged-in user
+    When they navigate to the settings page and modify their settings (e.g., change password, update profile information)
+    Then the changes should be saved successfully
+
+Scenario: Validate error handling when submitting invalid data in the settings form
+    Given a user is on the settings page
+    When they submit invalid data in the settings form
+    Then they should receive appropriate error messages indicating the validation errors
+
+Scenario: Ensure changes made in the settings page are reflected accurately throughout the application
+    Given a logged-in user
+    When they update their settings
+    Then the changes should be accurately reflected across all relevant sections of the application
+
+Feature: Profile Management
+
+Scenario: Confirm accurate display of user information on the profile page
+    Given a logged-in user
+    When they access the profile page
+    Then they should see their personal information displayed accurately
+
+Scenario: Test the functionality of editing user profile information
+    Given a user is on the profile page
+    When they edit their profile information
+    Then the changes should be saved successfully
+
+Scenario: Validate functionality of specific features on the profile page
+    Given a user is on the profile page
+    When they interact with specific features such as uploading a profile picture
+    Then the interactions should function as intended and relevant changes should be reflected
